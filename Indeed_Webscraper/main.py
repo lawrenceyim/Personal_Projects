@@ -29,16 +29,14 @@ def transform_data(soup):
 
 
 job_list = []
-page = 'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Lawrenceville%2C%20GA&vjk=936f47d20e89e7b2'
-transform_data(extract_data(page))
-page1 = 'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Lawrenceville%2C%20GA&start=10&vjk=ab9d7d266d10fe47'
-transform_data(extract_data(page1))
-page2 = 'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Atlanta%2C%20GA&vjk=254a1c3bc64b81c2'
-transform_data(extract_data(page2))
-page3 = 'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Atlanta%2C%20GA&start=10&vjk=d722c19f5c49d36b'
-transform_data(extract_data(page3))
-page4 = 'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Atlanta%2C%20GA&start=20&vjk=936f47d20e89e7b2'
-transform_data(extract_data(page4))
+pages = ['https://www.indeed.com/jobs?q=software%20developer%20intern&l=Lawrenceville%2C%20GA&vjk=936f47d20e89e7b2',
+        'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Lawrenceville%2C%20GA&start=10&vjk=ab9d7d266d10fe47',
+        'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Atlanta%2C%20GA&vjk=254a1c3bc64b81c2',
+        'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Atlanta%2C%20GA&start=10&vjk=d722c19f5c49d36b',
+        'https://www.indeed.com/jobs?q=software%20developer%20intern&l=Atlanta%2C%20GA&start=20&vjk=936f47d20e89e7b2'
+]
+for page in pages:
+    transform_data(extract_data(page))
 print(f"Number of jobs: {len(job_list)}")
 for job in job_list:
     print(job)
